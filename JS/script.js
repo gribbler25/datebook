@@ -1,21 +1,68 @@
-//object with "time: textarea value " property/value pairs that are stored here upon clicking save btn
-var tasks = {};
+var time = "";
+var toDo = "";
+
+// var tasks = {};
+arr = [];
+// tasks.time = time;
+// tasks.toDo = toDo;
+// arr.push({ tasks });
+
+console.log(arr);
+
 
 function loadDate() {
     var today = moment().format("ddd MMM DD YYYY");
     var date = document.querySelector("#currentDay");
     date.textContent = (today);
 };
-
 loadDate();
 
-var saveTask = function () {
-    //value of the text area pushed to unique time property value(from the data-time attr) in tasks object..
-    //then whole object pushed to tasks in local storage.
-    localStorage.setItem("tasks", JSON.stringify(tasks));
+
+$(".saveBtn").on("click", function () {   // save to local storage AND dynamically
+    var timeId = $(this).siblings(".hour").text();   // push properties of tasks to the object 
+    console.log(timeId);
+
+    var textId = $(this).siblings(".row").val();
+    console.log(textId);
+
+    localStorage.setItem(timeId, JSON.stringify(textId));
+
+    tasks = {
+        timeId: timeId,
+        textId: textId
+    };
+    arr.push({ tasks });
+    console.log(arr);
+});
+
+
+var loadPage = function () { //can't get the item value from local storage despite correct syntax
+    var textGet = localStorage.getItem("8AM");
+    console.log(textGet);
+    var text8 = JSON.parse(textGet);
+    console.log(text8);
+    $(".eight").val(text8);
 };
 
-//EVENT LISTENER... on click, then run saveTask();
 
-//setInterval().. run every 30 mins--60000*30 ms--- a function comparing(diff??) the current time to each time block value and adding Class of 
-//present or future if it applies( past time class is default)
+setInterval(checkStatus, 60000 * 30);
+
+var checkStatus = function () {
+    var currentTime = moment().hour();
+    console.log(currentTime);
+
+    $(".time").each(function () {
+        var time = parseInt($(this).attr("id"));
+        console.log(time);
+        if (time = currentTime) { //this?? matches one id to the curerent time and turns all the .time class elements to present class
+            $(".time").addClass("present")
+        }
+        else {
+            $(".time").addClass("future")
+        }
+
+    })
+};
+checkStatus();
+
+loadPage();
