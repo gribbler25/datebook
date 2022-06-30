@@ -1,6 +1,4 @@
-var time = "";
-var toDo = "";
-
+var timeId = $(this).siblings(".hour").text();
 // var tasks = {};
 arr = [];
 // tasks.time = time;
@@ -19,50 +17,51 @@ loadDate();
 
 
 $(".saveBtn").on("click", function () {   // save to local storage AND dynamically
-    var timeId = $(this).siblings(".hour").text();   // push properties of tasks to the object 
+    var timeId = $(this).siblings(".hour").text().trim();   // push properties of tasks to the object 
     console.log(timeId);
 
     var textId = $(this).siblings(".row").val();
     console.log(textId);
 
-    localStorage.setItem(timeId, JSON.stringify(textId));
+    localStorage.setItem(timeId, textId);
 
-    tasks = {
-        timeId: timeId,
-        textId: textId
-    };
-    arr.push({ tasks });
-    console.log(arr);
+    // tasks = {
+    //     timeId: timeId,
+    //     textId: textId
+    // };
+    // arr.push({ tasks });
+    // console.log(arr);
 });
 
 
-var loadPage = function () { //can't get the item value from local storage despite correct syntax
+var loadPage = function () {
     var textGet = localStorage.getItem("8AM");
     console.log(textGet);
-    var text8 = JSON.parse(textGet);
-    console.log(text8);
-    $(".eight").val(text8);
+
+    $(".row").val(localStorage.getItem("8AM"));//maybe set data to = index values in for loop and get correct time slots to display the text that way?
+    checkStatus();
 };
 
 
-setInterval(checkStatus, 60000 * 30);
 
 var checkStatus = function () {
     var currentTime = moment().hour();
     console.log(currentTime);
 
     $(".time").each(function () {
-        var time = parseInt($(this).attr("id"));
+        var time = ($(this).attr("id"));
         console.log(time);
-        if (time = currentTime) { //this?? matches one id to the curerent time and turns all the .time class elements to present class
+        if (time == currentTime) { //this?? matches one id to the curerent time and turns all the .time class elements to present class
             $(".time").addClass("present")
         }
-        else {
+        else if (time > currentTime) {
             $(".time").addClass("future")
         }
 
     })
 };
-checkStatus();
+var interval = (60000 * 30);
+console.log(interval);
+setInterval(checkStatus, interval);
 
 loadPage();
