@@ -1,6 +1,6 @@
 # Work Day Scheduler: a work in progress
 
-## Languages/ Resources used
+## Technologies used
 
 * Javascript
 * HTML
@@ -12,4 +12,8 @@
 
 ## Barriers to completion of functionality
 
-*
+* data loading from local storage needs to be assigned to specific elements, not all the textareas 
+
+* the status checking function compares all times against current hour but then will color them all red if only one time matches the current hour
+
+* student ran out of time to address functionality issues.
