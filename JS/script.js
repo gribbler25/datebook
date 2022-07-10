@@ -23,41 +23,40 @@ var loadPage = function () {
 
     storageArr.push(key);
   }
-  // create an array of all the  p elements with .time
-  var times = Array.from(document.querySelectorAll(".time"));
+  // create an array of all the  textarea elements with .time
+  var times = document.querySelectorAll(".description");
   console.log(times);
-
-  // nested forEach loop
-  storageArr.forEach(function (element) {
-    //so, for each element in the local storage array, we get the value text
-    var valueText = localStorage.getItem(element);
-
-    //for each times array element, we  check to see if the data-id attribute is equal to the what we have in local storage key
-    // if it's equal, then we  update the innerhtml
-    times.forEach(function (time) {
+  //for each times array element, we  check to see if the data-id attribute is equal to the what we have in local storage key
+  // if it's equal, then we  update the innerhtml
+  times.forEach(function (time) {
+    checkStatus(time);
+    // nested forEach loop
+    storageArr.forEach(function (element) {
+      //so, for each element in the local storage array, we get the value text
+      var valueText = localStorage.getItem(element);
       if (time.dataset.id == element) {
-        var parent = time.parentElement;
-
-        var parentSib = parent.nextElementSibling;
-        parentSib.innerHTML = valueText;
+        // var parent = time.parentElement;
+        // var parentSib = parent.nextElementSibling;
+        time.innerHTML = valueText;
       }
     });
   });
+  //checkStatus();
 };
 
-var checkStatus = function () {
+var checkStatus = function (time) {
+  //try to compare the data-id of the 'p' element to the current hour from moment.js
   var currentTime = moment().hour();
   console.log(currentTime);
-  $(".time").each(function () {
-    var time = $(this).attr("data-id");
-    console.log(time);
-    // if (time == currentTime)
-    if (parseInt(time) > currentTime) {
-      $(".time").addClass("future");
-    } else if (parseInt(time) == currentTime) {
-      $(".time").addClass("present");
-    }
-  });
+  var timeAtt = parseInt(time.dataset.id);
+
+  if (timeAtt > currentTime) {
+    $(time).addClass("future");
+  } else if (timeAtt === currentTime) {
+    $(time).addClass("present");
+  } else {
+    $(time).addClass("past");
+  }
 };
 
 var interval = 60000 * 30;
