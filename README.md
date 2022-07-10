@@ -1,6 +1,6 @@
-# Work Day Scheduler: a work in progress
+# Work Day Scheduler: An app to help a user schedule their day and allows the task data to persist in the correct time slots, color coding the task text areas to indicate if the tasks are in the past/ present/ future for better quick-glance fucntionality.
 
-## Languages/ Resources used
+## Languages/ tools used
 
 * Javascript
 * HTML
@@ -10,6 +10,6 @@
 * Moment.js
 * Browser API
 
-## Barriers to completion of functionality
+## Challenges:
 
-*
+* 
