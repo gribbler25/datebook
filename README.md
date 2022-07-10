@@ -1,6 +1,12 @@
-# Work Day Scheduler: a work in progress
+# Work Day Scheduler: An app to help a user schedule their day and allows the task data to persist in the correct time slots, color coding the task text areas to indicate if the tasks are in the past/ present/ future for better quick-glance functionality.
 
-## Technologies used
+
+<img width="1280" alt="Screen Shot 2022-07-10 at 3 20 43 PM" src="https://user-images.githubusercontent.com/98048059/178164223-58cbe338-4168-4aa2-b541-ccfef107ad70.png">
+
+https://gribbler25.github.io/datebook/
+
+## Languages/ tools used
+
 
 * Javascript
 * HTML
@@ -10,14 +16,8 @@
 * Moment.js
 * Browser API
 
-## Barriers to completion of functionality
+## Challenges:
 
-* data loading from local storage needs to be assigned to specific elements, not all the textareas 
 
-* the status checking function compares all times against current hour but then will color them all red if only one time matches the current hour
+* The biggest challenge to overcome was getting working code that acheived the task of getting the text items from local storage and displaying them in the correct textarea based on matching a storage key with a data-id. Using forEach logic and nesting a forEach loop after consult with a senior developer finally acheived that functionality.
 
-* student ran out of time to address functionality issues.
-
-<img width="1440" alt="Screen Shot 2022-06-29 at 9 52 26 PM" src="https://user-images.githubusercontent.com/98048059/176582785-e3930d1f-c7cc-4dfe-af71-795698f8be7d.png">
-
- https://gribbler25.github.io/datebook/
