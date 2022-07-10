@@ -1,132 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Work Day Scheduler</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
-  <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css" />
-  <link rel="stylesheet" href="./css/style.css" />
-  <title>Work Day Scheduler</title>
-</head>
+  <body>
+    <header class="jumbotron">
+      <h1 class="display-3">Work Day Scheduler</h1>
 
-<body>
-  <header class="jumbotron">
-    <h1 class="display-3">Work Day Scheduler</h1>
-
-    <p id="currentDay" class="lead today">
-    </p>
-  </header>
-  <div class="container">
-    <div class="row w-100 time-block">
-      <div class="col-2 hour">
-        <p class="time past" id="8">8AM</p>
+      <p id="currentDay" class="lead today"></p>
+    </header>
+    <div class="container">
+      <div class="row w-100 time-block">
+        <div class="col-2 hour">
+          <p class="time past" data-id="8">8AM</p>
+        </div>
+        <textarea class="col-8 description past row eight" data-id="8AM">
+        </textarea>
+        <button class="col-2 saveBtn">
+          <span class="oi oi-lock-locked"></span>
+        </button>
       </div>
-      <textarea class="col-8 description past row eight">
-
-      </textarea>
-      <button class="col-2 saveBtn">
-        <span class="oi oi-lock-locked"></span>
-      </button>
-    </div>
-    <div class="row w-100 time-block">
-      <div class="col-2 hour">
-        <p class="time past" id="9">9AM</p>
+      <div class="row w-100 time-block">
+        <div class="col-2 hour">
+          <p class="time past" data-id="9">9AM</p>
+        </div>
+        <textarea class="col-8 description past row"> </textarea>
+        <button class="col-2 saveBtn">
+          <span class="oi oi-lock-locked"></span>
+        </button>
       </div>
-      <textarea class="col-8 description past row">
-
-    </textarea>
-      <button class="col-2 saveBtn">
-        <span class="oi oi-lock-locked"></span>
-      </button>
-    </div>
-    <div class="row w-100 time-block">
-      <div class="col-2 hour">
-        <p class="time past" id="10">10AM</p>
+      <div class="row w-100 time-block">
+        <div class="col-2 hour">
+          <p class="time past" data-id="10">10AM</p>
+        </div>
+        <textarea class="col-8 description past row"> </textarea>
+        <button class="col-2 saveBtn">
+          <span class="oi oi-lock-locked"></span>
+        </button>
       </div>
-      <textarea class="col-8 description past row">
-
-    </textarea>
-      <button class="col-2 saveBtn">
-        <span class="oi oi-lock-locked"></span>
-      </button>
-    </div>
-    <div class="row w-100 time-block">
-      <div class="col-2 hour">
-        <p class="time past" id="11">11AM</p>
+      <div class="row w-100 time-block">
+        <div class="col-2 hour">
+          <p class="time past" data-id="11">11AM</p>
+        </div>
+        <textarea class="col-8 description past row"> </textarea>
+        <button class="col-2 saveBtn">
+          <span class="oi oi-lock-locked"></span>
+        </button>
       </div>
-      <textarea class="col-8 description past row">
 
-    </textarea>
-      <button class="col-2 saveBtn">
-        <span class="oi oi-lock-locked"></span>
-      </button>
-    </div>
-    <div class="row w-100 time-block">
-      <div class="col-2 hour">
-        <p class="time past" id="12">12PM</p>
+      <div class="row w-100 time-block">
+        <div class="col-2 hour">
+          <p class="time past" data-id="12">12PM</p>
+        </div>
+        <textarea class="col-8 description past row"> </textarea>
+        <button class="col-2 saveBtn">
+          <span class="oi oi-lock-locked"></span>
+        </button>
       </div>
-      <textarea class="col-8 description past row">
 
-    </textarea>
-      <button class="col-2 saveBtn">
-        <span class="oi oi-lock-locked"></span>
-      </button>
-    </div>
-    <div class="row w-100 time-block">
-      <div class="col-2 hour">
-        <p class="time past" id="13">1PM</p>
+      <div class="row w-100 time-block">
+        <div class="col-2 hour">
+          <p class="time past" data-id="13">1PM</p>
+        </div>
+        <textarea class="col-8 description past row"> </textarea>
+        <button class="col-2 saveBtn">
+          <span class="oi oi-lock-locked"></span>
+        </button>
       </div>
-      <textarea class="col-8 description past row">
 
-    </textarea>
-      <button class="col-2 saveBtn">
-        <span class="oi oi-lock-locked"></span>
-      </button>
-    </div>
-    <div class="row w-100 time-block">
-      <div class="col-2 hour">
-        <p class="time past" id="14">2PM</p>
+      <div class="row w-100 time-block">
+        <div class="col-2 hour">
+          <p class="time past" data-id="14">2PM</p>
+        </div>
+        <textarea class="col-8 description past row"> </textarea>
+        <button class="col-2 saveBtn">
+          <span class="oi oi-lock-locked"></span>
+        </button>
       </div>
-      <textarea class="col-8 description past row">
-
-    </textarea>
-      <button class="col-2 saveBtn">
-        <span class="oi oi-lock-locked"></span>
-      </button>
-    </div>
-    <div class="row w-100 time-block">
-      <div class="col-2 hour">
-        <p class="time past" id="15">3PM</p>
+      <div class="row w-100 time-block">
+        <div class="col-2 hour">
+          <p class="time past" data-id="15">3PM</p>
+        </div>
+        <textarea class="col-8 description past row"> </textarea>
+        <button class="col-2 saveBtn">
+          <span class="oi oi-lock-locked"></span>
+        </button>
       </div>
-      <textarea class="col-8 description past row">
-
-    </textarea>
-      <button class="col-2 saveBtn">
-        <span class="oi oi-lock-locked"></span>
-      </button>
-    </div>
-    <div class="row w-100 time-block">
-      <div class="col-2 hour">
-        <p class="time past" id="16">4PM</p>
+      <div class="row w-100 time-block">
+        <div class="col-2 hour">
+          <p class="time past" data-id="16">4PM</p>
+        </div>
+        <textarea class="col-8 description past row"> </textarea>
+        <button class="col-2 saveBtn">
+          <span class="oi oi-lock-locked"></span>
+        </button>
       </div>
-      <textarea class="col-8 description past row">
-
-    </textarea>
-      <button class="col-2 saveBtn">
-        <span class="oi oi-lock-locked"></span>
-      </button>
     </div>
-  </div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-  <script src="./JS/script.js"></script>
-</body>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="./JS/script.js"></script>
+  </body>
 </html>
